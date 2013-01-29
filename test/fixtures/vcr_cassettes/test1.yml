@@ -33,15 +33,15 @@ http_interactions:
       Content-Length:
       - '0'
       Date:
-      - Mon, 28 Jan 2013 22:38:30 GMT
+      - Tue, 29 Jan 2013 04:29:17 GMT
     body:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Mon, 28 Jan 2013 22:38:50 GMT
+  recorded_at: Tue, 29 Jan 2013 04:29:37 GMT
 - request:
     method: get
-    uri: <URL>/rest_v2/reports/reports/samples/Department.pdf?Value1=Value1&Value2=Value2
+    uri: <URL>/rest_v2/reports/reports/samples/Department.pdf
     body:
       encoding: US-ASCII
       string: ''
@@ -50,6 +50,10 @@ http_interactions:
       - ! '*/*; q=0.5, application/xml'
       Accept-Encoding:
       - gzip, deflate
+      Value1:
+      - Value1
+      Value2:
+      - Value2
       Cookie:
       - <COOKIE>
       User-Agent:
@@ -83,7 +87,7 @@ http_interactions:
         OTA1
       !binary "RGF0ZQ==":
       - !binary |-
-        TW9uLCAyOCBKYW4gMjAxMyAyMjozODozMSBHTVQ=
+        VHVlLCAyOSBKYW4gMjAxMyAwNDoyOToxNyBHTVQ=
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -99,15 +103,15 @@ http_interactions:
         Q2F0YWxvZy9WaWV3ZXJQcmVmZXJlbmNlczw8L1ByaW50U2NhbGluZy9BcHBE
         ZWZhdWx0Pj4vUGFnZXMgMiAwIFI+PgplbmRvYmoKNSAwIG9iago8PC9DcmVh
         dG9yKEphc3BlclJlcG9ydHMgXChEZXBhcnRtZW50XCkpL1Byb2R1Y2VyKGlU
-        ZXh0IDIuMS43IGJ5IDFUM1hUKS9Nb2REYXRlKEQ6MjAxMzAxMjgxNjM4MzEt
-        MDYnMDAnKS9DcmVhdGlvbkRhdGUoRDoyMDEzMDEyODE2MzgzMS0wNicwMCcp
+        ZXh0IDIuMS43IGJ5IDFUM1hUKS9Nb2REYXRlKEQ6MjAxMzAxMjgyMjI5MTct
+        MDYnMDAnKS9DcmVhdGlvbkRhdGUoRDoyMDEzMDEyODIyMjkxNy0wNicwMCcp
         Pj4KZW5kb2JqCnhyZWYKMCA2CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAw
         MDAxNSAwMDAwMCBuIAowMDAwMDAwMzI2IDAwMDAwIG4gCjAwMDAwMDAxMTAg
         MDAwMDAgbiAKMDAwMDAwMDM4OSAwMDAwMCBuIAowMDAwMDAwNDgwIDAwMDAw
-        IG4gCnRyYWlsZXIKPDwvUm9vdCA0IDAgUi9JRCBbPGFhMmI3MjkwZGZhOGJj
-        MTIyYmI5OWFmZTRjN2M3N2RkPjwyNzU0OTc0ZDk2ODYxYTI3ZTY2NDc1MDBm
-        OGE0MWZkND5dL0luZm8gNSAwIFIvU2l6ZSA2Pj4Kc3RhcnR4cmVmCjY0MAol
+        IG4gCnRyYWlsZXIKPDwvUm9vdCA0IDAgUi9JRCBbPGQ3YTg4ODU3YjE2OGJl
+        MDQ0NTcwN2VjMTdmNDk3ZTBmPjxiNWMzMDJmYWJmOWM0YmY5M2Y4NWNhMzc5
+        NzAzMTJkZD5dL0luZm8gNSAwIFIvU2l6ZSA2Pj4Kc3RhcnR4cmVmCjY0MAol
         JUVPRgo=
     http_version: 
-  recorded_at: Mon, 28 Jan 2013 22:38:50 GMT
+  recorded_at: Tue, 29 Jan 2013 04:29:37 GMT
 recorded_with: VCR 2.4.0

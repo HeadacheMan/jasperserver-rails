@@ -7,7 +7,6 @@ module JasperserverRails
     self.class_eval do
       [:report, :format, :params].each do |method|
         define_method method do |arg|
-          arg = arg.collect { |key, value| [key, value] } if method == :params
           instance_variable_set "@#{method}".to_sym, arg
         end
 
@@ -27,8 +26,8 @@ module JasperserverRails
       login
       # Run report
       response2 = RestClient.get(
-        URI.join(Rails.configuration.jasperserver[Rails.env.to_sym][:url]+'/', "rest_v2/reports/reports/#{self.get_report}.#{self.get_format}?#{URI.encode_www_form(self.get_params)}").to_s,
-        {:cookies => @cookie }
+        URI.join(Rails.configuration.jasperserver[Rails.env.to_sym][:url]+'/', "rest_v2/reports/reports/#{self.get_report}.#{self.get_format}").to_s,
+        {:cookies => @cookie }.merge(self.get_params),
       )
 
       # Write file

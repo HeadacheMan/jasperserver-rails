@@ -38,7 +38,7 @@ class JasperserverRailsTest < ActiveSupport::TestCase
       JasperserverRails::Jasperserver.new do
         format 'pdf'
         report 'samples/Department'
-        params({ :Value1 => 'Value1' })
+        params :Value1 => 'Value1'
         run_report('test/dummy/tmp/reports/test2.pdf')
       end
     end
