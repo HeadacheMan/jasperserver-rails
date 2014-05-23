@@ -26,16 +26,13 @@ module JasperserverRails
       instance_eval(&block) if block_given?
       login
       # Run report
+      config = YAML.load File.read(Rails.root.join('config/jasperserver.yml'))
       response2 = RestClient.get(
-        URI.join(Rails.configuration.jasperserver[Rails.env.to_sym][:url]+'/', "rest_v2/reports/reports/#{self.get_report}.#{self.get_format}?#{URI.encode_www_form(self.get_params)}").to_s,
+        URI.join(config[Rails.env]['url']+'/', "rest_v2/reports/reports/#{self.get_report}.#{self.get_format}?#{URI.encode_www_form(self.get_params)}").to_s,
         {:cookies => @cookie }
       )
 
-      # Write file
-      FileUtils.mkdir_p(File.expand_path(filename).split('/')[0..-2].join('/'))
-      f = File.new(filename, 'wb')
-      f.write(response2.body)
-      f.close
+      response2.body
     end
     
     private
@@ -43,11 +40,12 @@ module JasperserverRails
     def login
       # login
       if @cookie.nil?
+        config = YAML.load File.read(Rails.root.join('config/jasperserver.yml'))
         response = RestClient.post(
-        URI.join(Rails.configuration.jasperserver[Rails.env.to_sym][:url]+'/', 'rest/login').to_s,
+        URI.join(config[Rails.env]['url']+'/', 'rest/login').to_s,
           {
-            j_username: Rails.configuration.jasperserver[Rails.env.to_sym][:username],
-            j_password: Rails.configuration.jasperserver[Rails.env.to_sym][:password]
+            j_username: config[Rails.env]['username'],
+            j_password: config[Rails.env]['password']
           }
         )
         @cookie = response.cookies
